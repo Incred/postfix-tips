@@ -26,7 +26,9 @@ smtpd_authorized_verp_clients = $mynetworks
 ```
 
 Add to /etc/postfix/append_verp.pcre:
-`/^(MAIL FROM:<.*)@(reply\.)?example\.com(>.*)/ $1@bounce.example.com$3 XVERP`
+```
+/^(MAIL FROM:<.*)@(reply\.)?example\.com(>.*)/ $1@bounce.example.com$3 XVERP
+```
  
 Add bounce transport to /etc/postfix/master.cf:
 ```
